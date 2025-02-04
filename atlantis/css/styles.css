@@ -1,0 +1,251 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+
+}
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+.amona-container {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    animation: wave 4s infinite ease-in-out;
+    text-align: center;
+    margin-bottom: 20px; /* Adjusts position above wave */
+}
+@keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-100px); }
+}
+.wave-container {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    height: 100px;
+
+}
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: url('path/to/your/wave.svg') repeat-x;
+    animation: wave-animation 5s infinite linear;
+}
+@keyframes wave-animation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+.music-card {
+    margin: 20px;
+    background: #fff;
+    box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.45);
+    overflow: hidden;
+    position: relative;
+    width: 300px;
+    height: 500px;
+    border-radius: 6px;
+}
+.image {
+    background: url('ce2e1b70869547bf7668be432acc8c36.jpg') no-repeat center;
+    background-size: cover;  
+    position: absolute;
+    z-index: 1;
+    opacity: 0.3;
+    height: 300px;
+    width: 100%;
+}
+.image:after {
+    height: 100px;
+    content: '';
+    top: 200px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background: linear-gradient(rgba(9, 2, 4, 0), #444);
+}
+.wave {
+    position: absolute;
+    height: 750px;
+    width: 750px;
+    opacity: 0.6;
+    left: 0;
+    top: 0;
+    margin-left: -70%;
+    margin-top: -130%;
+    background: radial-gradient(#353535, #383737);
+}
+.wave:nth-child(2),
+.wave:nth-child(3) {
+    top: 10px;
+}
+.playing .wave {
+    border-radius: 40%;
+    animation: wave 3s infinite linear;
+}
+.info {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.title {
+    font-size: 1.4em;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+.artist {
+    color: #cfcfcf;
+    font-size: 1.2em;
+    letter-spacing: 0.08em;
+    margin-top: -10px;
+}
+.fa {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #555;
+}
+.fa-play {
+    display: none;
+}
+.ship-gif-container {
+text-align: center; /* Centers the GIF */
+margin-top: 20px;
+}
+
+.ship-gif {
+width: 1000px; /* Adjust size as needed */
+animation: float 3s ease-in-out infinite; /* Optional floating animation */
+}
+
+/* Optional floating animation for a gentle up-and-down effect */
+@keyframes float {
+0%, 100% { transform: translateY(0); }
+50%{transform: translateX(20px);}
+50% { transform: translateY(-40px); }
+}
+body{
+margin:0;
+padding:0;
+font-family:sans-serif;
+background:#ffffff;
+}
+
+.center{
+position:absolute;
+top:50%;
+left:50%;
+transform:prespective(1000px) translate(-50%,-50%);
+transform:skewY(15deg);
+transition:0.5s;
+}
+
+.center:hover{
+transform:prespective(1000px) translate(-50%,-50%);
+transform:skewY(0deg);
+}
+
+.center h1 span{
+position:absolute;
+top:0;
+left:0;
+transform:translate(-50%,-50%);
+margin:0;
+padding:0;
+text-transform:uppercase;
+font-size:6em;
+color:#fff;
+transform-style:preserve-3d;
+transition:0.8s;
+}
+.center h1 span:nth-child(1){
+clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+
+
+.center h1 span:nth-child(2){
+color:#5E17EB;
+transform:translate(-50%,-50%) skewX(-60deg);
+left:-38px;
+clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+}
+
+.center h1 span:nth-child(3){
+transform:translate(-50%,-50%) skewY(0deg);
+left:-76px;
+clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+.center:hover h1 span:nth-child(2), 
+.center:hover h1 span:nth-child(3){
+transform:translate(-50%,-50%) skewX(0deg);
+left:0;
+color:#fff;
+}
+
+.center h1 span:nth-child(2){
+    color:#001cbd;
+    transform:translate(-50%,-50%) skewX(-60deg);
+    left:-38px;
+    clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+    }
+    
+    
+    
+    .center:hover h1 span:nth-child(2), 
+    .center:hover h1 span:nth-child(3){
+    transform:translate(-50%,-50%) skewX(0deg);
+    left:0;
+    color:#fff;
+    }
+    

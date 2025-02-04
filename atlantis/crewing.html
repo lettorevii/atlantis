@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlantis Tankers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="https://www.atlantis-tankers.com/favicon.ico" />
+</head>
+<body>
+
+<div class="video-container">
+    <video autoplay muted loop>
+        <source src="img/2943126-uhd_3840_2160_24fps.mp4" type="video/mp4">
+    </video>
+    <div class="center">
+        <h1>
+          <span>CREWİNG</span>
+        
+          <span>CREWİNG</span>
+          <span>CREWİNG</span>
+        
+        </h1>
+      </div>
+</div>
+
+<section class="cards-container">
+    <div class="card-wrapper">
+        <div class="card" id="card-1">
+            <div class="card-header">
+                <h2>BAŞLIK</h2>
+            </div>
+            <div class="card-content">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, incidunt.</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-wrapper">
+        <div class="card" id="card-2">
+            <div class="card-header">
+                <h2>BAŞLIK</h2>
+            </div>
+            <div class="card-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, consequatur./p>
+            </div>
+        </div>
+    </div>
+    <div class="card-wrapper">
+        <div class="card" id="card-3">
+            <div class="card-header">
+                <h2>BAŞLIK</h2>
+            </div>
+            <div class="card-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, est!</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-wrapper">
+        <div class="card" id="card-4">
+            <div class="card-header">
+                <h2>BAŞLIK</h2>
+            </div>
+            <div class="card-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, error?</p>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="ship-s">
+    <img src="img/image-removebg-preview (1).png" alt="">
+    <img src="img/image-removebg-preview (2).png" alt="">
+    <P>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, error hic repellat similique sed omnis aperiam laboriosam inventore aspernatur, impedit fuga quas iusto in consectetur nisi, at autem nostrum ex?
+    </P>
+</div>
+
+<script>
+
+    window.addEventListener('scroll', function() {
+        document.querySelectorAll('.gallery-item').forEach((item, index) => {
+            const itemPosition = item.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+
+            if (itemPosition < screenPosition) {
+                item.classList.add('fade-in');
+            }
+        });
+    });
+    document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.boxShadow = "0px 10px 35px rgba(0, 0, 0, 0.3)";
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.boxShadow = "0px 10px 30px rgba(0, 0, 0, 0.2)";
+    });
+});
+
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+        if (card.classList.contains('card-expanded')) {
+            card.classList.remove('card-expanded');
+            card.querySelector('.card-content').style.opacity = 0; // Yazıyı gizle
+        } else {
+            document.querySelectorAll('.card').forEach(c => {
+                c.classList.remove('card-expanded');
+                c.querySelector('.card-content').style.opacity = 0;
+            });
+
+            card.classList.add('card-expanded');
+            card.querySelector('.card-content').style.opacity = 1; // Yazıyı görünür yap
+        }
+    });
+});
+
+</script>
+
+</body>
+</html>
